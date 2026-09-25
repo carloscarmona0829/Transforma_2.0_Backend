@@ -1,0 +1,202 @@
+const classDaoSql = require("../repository/daoEmpresarios");
+
+class interfaceDAOEmpresarios {
+    async setEmpresario(data) {
+        const dao = new classDaoSql();
+        let result = await dao.setEmpresario(data);
+        return result;
+    }
+
+    async setEmpresa(data) {
+        const dao = new classDaoSql();
+        let result = await dao.setEmpresa(data);
+        return result;
+    }
+
+    async setInfoAdicional(data){
+        const dao = new classDaoSql();
+        let result = await dao.setInfoAdicional(data);
+        return result
+    }
+
+    async setIdea(data){
+        const dao = new classDaoSql();
+        let result = await dao.setIdea(data);
+        return result
+    }
+
+    async setIdeaEmpresario(data){
+        const dao = new classDaoSql();
+        let result = await dao.setIdeaEmpresario(data);
+        return result
+    }
+
+    async sp_SetInfoPrincipalIdea(data){
+        const dao = new classDaoSql();
+        let result = await dao.sp_SetInfoPrincipalIdea(data);
+        return result
+    }
+
+    async updateEmpresario(data) {
+        const dao = new classDaoSql();
+        let result = await dao.updateEmpresario(data);
+        return result;
+    }
+
+    async updateIdea(data) {
+        const dao = new classDaoSql();
+        let result = await dao.updateIdea(data);
+        return result;
+    }
+
+    async updateIdeaEmpresario(data) {
+        const dao = new classDaoSql();
+        let result = await dao.updateIdeaEmpresario(data);
+        return result;
+    }
+
+    async updateEmpresa(data) {
+        const dao = new classDaoSql();
+        let result = await dao.updateEmpresa(data);
+        return result;
+    }
+
+    async updateInfoAdicional(data){
+        const dao = new classDaoSql()
+        let result = await dao.updateInfoAdicional(data)
+        return result
+    }
+    
+    async updateNoContactarEmpresario(data){
+        const dao = new classDaoSql()
+        let result = await dao.updateNoContactarEmpresario(data)
+        return result
+    }
+
+    async updateInactivarEmpresario(data){
+        const dao = new classDaoSql()
+        let result = await dao.updateInactivarEmpresario(data)
+        return result
+    }
+
+    async updateFechaFinEmpresario(data){
+        const dao = new classDaoSql()
+        let result = await dao.updateFechaFinEmpresario(data)
+        return result
+    }
+
+    async deleteEmpresario(data) {
+        const dao = new classDaoSql();
+        let result = await dao.deleteEmpresario(data);
+        return result;
+    }
+
+    async deleteIdea(data) {
+        const dao = new classDaoSql();
+        let result = await dao.deleteIdea(data);
+        return result;
+    }
+
+    async deleteIdeaEmpresario(data) {
+        const dao = new classDaoSql();
+        let result = await dao.deleteIdeaEmpresario(data);
+        return result;
+    }
+
+    async deleteInfoEmpresa(data) {
+        const dao = new classDaoSql();
+        let result = await dao.deleteInfoEmpresa(data);
+        return result;
+    }
+
+    async deleteEmpresarioSecundario(data) {
+        const dao = new classDaoSql();
+        let result = await dao.deleteEmpresarioSecundario(data);
+        return result;
+    }
+
+    async deleteInfoAdicional(data){
+        const dao = new classDaoSql()
+        let result = await dao.deleteInfoAdicional(data);
+        return result
+    }
+
+    async getIdeaEmpresario(data) {
+        const dao = new classDaoSql();
+        let result = await dao.getIdeaEmpresario(data);
+        return result;
+    }
+
+    async getLastEmpresario() {
+        const dao = new classDaoSql();
+        let result = await dao.getLastEmpresario();
+        return result;
+    }
+
+    async getEmpresarioTabla() {
+        const dao = new classDaoSql();
+        let result = await dao.getEmpresarioTabla();
+        return result;
+    }
+
+    async getEmpresario(data) {
+        const dao = new classDaoSql();
+        let result = await dao.getEmpresario(data);
+        return result;
+    }
+
+    async getEmpresarioBasica() {
+        const dao = new classDaoSql();
+        let result = await dao.getEmpresarioBasica();
+        return result;
+    }
+
+    async getEmpresarioByIdea(data) {
+        const dao = new classDaoSql();
+        let result = await dao.getEmpresarioByIdea(data);
+        return result;
+    }
+
+    async getNroDocumentoEmpresario(data) {
+        const dao = new classDaoSql();
+        let result = await dao.getNroDocumentoEmpresario(data);
+        return result;
+    }
+
+    async getIdTipoEmpresario(data){
+        const dao = new classDaoSql();
+        let result = await dao.getIdTipoEmpresario(data);
+        return result;
+    }
+
+    async getIdEmpresarioPrincipal(data){
+        const dao = new classDaoSql();
+        let result = await dao.getIdEmpresarioPrincipal(data);
+        return result;
+    }
+
+    async getEmpresarioIdea(data){
+        const dao = new classDaoSql();
+        let result = await dao.getEmpresarioIdea(data);
+        return result;
+    }
+
+    async getEstadoVinculacion(data){
+        const dao = new classDaoSql();
+        let result = await dao.getEstadoVinculacion(data);
+        return result;
+    }
+
+    async getIdEstadoVinculacion(data){
+        const dao = new classDaoSql();
+        let result = await dao.getIdEstadoVinculacion(data);
+        return result;
+    }
+
+    async getEmpresarioEvento(data){
+        const dao = new classDaoSql();
+        let result = await dao.getEmpresarioEvento(data);
+        return result;
+    }
+}
+module.exports = interfaceDAOEmpresarios;

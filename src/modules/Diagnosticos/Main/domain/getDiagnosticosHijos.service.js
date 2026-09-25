@@ -1,0 +1,54 @@
+//Librerias
+const validator = require("validator").default;
+//Clases
+const classInterfaceDiagnosticos = require("../infra/conectors/interfaseDAODiagnosticos");
+
+const getDiagnosticosHijos = async (objParams, strDataUser) => {
+    let = { intId, btFinalizado } = objParams;
+
+    if (
+        !validator.isEmail(strDataUser.strEmail, {
+            domain_specific_validation: "cmmmedellin.org",
+        })
+    ) {
+        throw new Error(
+            "El campo de Usuario contiene un formato no valido, debe ser de tipo email y pertenecer al domino cmmmedellin.org."
+        );
+    }
+
+    let dao = new classInterfaceDiagnosticos();
+
+    let query = {
+        intId: intId || null,
+    };
+
+    let arrayData = await dao.getDiagnosticosHijos(query);
+
+    if (!arrayData.error && arrayData.data) {
+        if (arrayData.data.length > 0) {
+            let array = arrayData.data;
+
+            for (let i = 0; i < array.length; i++) {
+                if (!btFinalizado) {
+                    array[i] = {
+                        objDiagnosticoGeneral: array[i]?.objDiagnosticoGeneral?.[0]?.btFinalizado ? null : array[i]?.objDiagnosticoGeneral,
+                        objDiagnosticoHumanoSocial: array[i]?.objDiagnosticoHumanoSocial?.[0]?.btFinalizado ? null : array[i]?.objDiagnosticoHumanoSocial,
+                        objDiagnosticoCompetenciasTecnicas: array[i]?.objDiagnosticoCompetenciasTecnicas?.[0]?.btFinalizado ? null : array[i]?.objDiagnosticoCompetenciasTecnicas,
+                        objDiagnosticoProductos: array[i]?.objDiagnosticoProductos?.[0]?.btFinalizado ? null : array[i]?.objDiagnosticoProductos,
+                        objDiagnosticoServicios: array[i]?.objDiagnosticoServicios?.[0]?.btFinalizado ? null : array[i]?.objDiagnosticoServicios,
+                    }
+                }
+            }
+
+            let result = {
+                error: false,
+                data: array,
+            };
+
+            return result;
+        }
+    }
+
+    return arrayData;
+};
+module.exports = getDiagnosticosHijos;
