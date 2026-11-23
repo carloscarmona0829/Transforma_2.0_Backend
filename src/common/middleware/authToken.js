@@ -3,7 +3,7 @@ const jwt = require("jsonwebtoken");
 const path = require("path");
 const fs = require("fs");
 
-const privateKey = fs.readFileSync(path.basename("../../../jwtRS256.key"), "utf-8");
+const privateKey = fs.readFileSync(path.join(__dirname, "../../../jwtRS256.key"), "utf-8");
 
 const authToken = (req, res, next) => {
     let token = req.get("token");

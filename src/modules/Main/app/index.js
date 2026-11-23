@@ -63,6 +63,8 @@ app.use(require("../../Servicios/Modulo/Paquetes/infra/http/apiPaquetes.routes")
 app.use(require("../../Tareas/infra/http/apiTareas.routes"))
 app.use(require("../../Terceros/infra/http/apiTercero.routes"))
 app.use(require("../../Usuarios/infra/http/apiUsuarios.routes"))
+app.use(require("../../TestPrueba/infra/http/apiTestPrueba.routes"));
+
 
 
 module.exports = app;

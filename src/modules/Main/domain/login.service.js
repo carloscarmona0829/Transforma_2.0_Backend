@@ -8,7 +8,7 @@ const validator = require("validator").default;
 
 //Private Key JWT
 const privateKey = fs.readFileSync(
-    path.basename("../../../../jwtRS256.key"),
+    path.join(__dirname, "../../../../jwtRS256.key"),
     "utf-8"
 );
 
